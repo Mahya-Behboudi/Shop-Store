@@ -1,8 +1,8 @@
 import React , {useEffect , useState , createContext} from 'react';
 // FAKE product api
 import { getProducts } from '../Services/api';
-const ProductContex = createContext()
-const ProductContexProvider = (props) => {
+export const ProductContex = createContext()
+const ProductContexProvider = ({children}) => {
     const [products , setProducts] = useState([])
     useEffect(() => {
          const fetchAPI= async () => {
@@ -13,7 +13,7 @@ const ProductContexProvider = (props) => {
     return (
         <div>
             <ProductContex.Provider value={products}>
-                {props.children}
+                {children}
             </ProductContex.Provider>    
         </div>
     );

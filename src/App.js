@@ -1,10 +1,12 @@
-// import logo from './logo.svg';
 import './App.css';
+// the context
 import ProductContexProvider from './Contex/ProductContexProvider';
+// components
+import Store from './Component/Store';
 function App() {
   return (
     <ProductContexProvider>
-      
+      <Store/>
     </ProductContexProvider>
   );
 }
