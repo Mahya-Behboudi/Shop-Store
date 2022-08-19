@@ -1,4 +1,4 @@
-import React , { useReducer} from 'react';
+import React , { createContext, useReducer} from 'react';
 const initialization= {
     selectItems : [],
     itemCounter :0,
@@ -22,17 +22,47 @@ const cardReducer=(state,action)=> {
                 const newSelectedItems = state.selectItems.filter(item => item.id !== action.payload.id) 
                 return {
                     ...state,
-                    selectItems:[...newSelectedItems];
+                    selectItems:[...newSelectedItems]
                 }
+        case 'INCREASE':
+            const indexI = state.selectItems.findIndex(item => item.id === action.payload.id);
+            state.selectItems[indexI].quantity++;
+            return {
+                ...state
+            }
+        case 'DECREASE':
+            const indexD = state.selectItems.findIndex(item =>item.id === action.payload.id)
+            state.selectItems[indexD].quantity--;
+            return {
+                ...state,
+            }
+        case 'CHECKOUT':
+            return {
+                selectItems : [],
+                itemCounter :0,
+                total: 0,
+                checkout:true,
+            }
+        case 'CLEAR':
+            return {
+                selectItems : [],
+                itemCounter :0,
+                total: 0,
+                checkout:false,
+            }
+        default:
+            return state
     }
 }
+export const cardContext = createContext()
 
-
-const CardContextProvider = () => {
+const CardContextProvider = ({children}) => {
     const [state , dispatch] =useReducer(cardReducer , initialization);
     return (
         <div>
-            
+            <cardContext.Provider value={{state, dispatch}}>
+                {children}
+            </cardContext.Provider>
         </div>
     );
 };
