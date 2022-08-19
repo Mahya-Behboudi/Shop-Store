@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 // The context
 import { ProductContex } from '../Contex/ProductContexProvider';
-import Product from './share/Product';
+import Product from '../share/Product';
 const Store = () => {
     const products = useContext(ProductContex)
     return (
