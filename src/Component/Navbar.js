@@ -11,8 +11,10 @@ const Navbar = () => {
     return (
         <div>
             <div>
-                <Link to='/card'>Products</Link>
+                <Link to='/products'>Products</Link>
+                <Link to='/cards'>
                 <img src={shopImage} alt="shop basket"/>
+                </Link>
                 <span>{state.itemCounter}</span>
             </div> 
         </div>
