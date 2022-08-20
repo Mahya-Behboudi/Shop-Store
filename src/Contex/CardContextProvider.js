@@ -6,6 +6,7 @@ const initialization= {
     checkout:false,
 }
 const cardReducer=(state,action)=> {
+    console.log(state);
     switch(action.type) {
         case 'ADD_ITEM':
             if(!state.selectItems.find(item =>item.id === action.payload.id)) {
