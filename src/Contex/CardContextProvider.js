@@ -5,6 +5,11 @@ const initialization= {
     total: 0,
     checkout:false,
 }
+const sumItems = items => {
+    const itemCounter =items.reduce((total,product) => total + product.quantity , 0);
+    const total = items.reduce((total , product) =>(total + product.price * product.quantity),0).toFix(2);
+    return{itemCounter,total}
+}
 const cardReducer=(state,action)=> {
     console.log(state);
     switch(action.type) {
@@ -17,7 +22,8 @@ const cardReducer=(state,action)=> {
             }
             return {
                 ...state,
-                selectItems:[...state.selectItems]
+                selectItems:[...state.selectItems],
+                ...sumItems(state.selectItems)
             }
         case 'REMOVE_ITEM':
                 const newSelectedItems = state.selectItems.filter(item => item.id !== action.payload.id) 
@@ -29,13 +35,15 @@ const cardReducer=(state,action)=> {
             const indexI = state.selectItems.findIndex(item => item.id === action.payload.id);
             state.selectItems[indexI].quantity++;
             return {
-                ...state
+                ...state,
+                ...sumItems(state.selectItems)
             }
         case 'DECREASE':
             const indexD = state.selectItems.findIndex(item =>item.id === action.payload.id)
             state.selectItems[indexD].quantity--;
             return {
                 ...state,
+                ...sumItems(state.selectItems)
             }
         case 'CHECKOUT':
             return {

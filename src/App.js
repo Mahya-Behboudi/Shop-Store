@@ -9,11 +9,14 @@ import CardContextProvider from './Contex/CardContextProvider';
 // components
 import Store from './Component/Store';
 import ProductDetails from './Component/ProductDetails';
+import Navbar from './Component/Navbar';
 function App() {
   return (
     <ProductContexProvider>
       <CardContextProvider>
+        <Navbar/>
         <Switch>
+          {/* <Route path='/card' component={Navbar}/>  */}
           <Route  path='/products/:id' component={ProductDetails}/>
           <Route path='/products' component={Store} />
           <Redirect to='/products'/>
