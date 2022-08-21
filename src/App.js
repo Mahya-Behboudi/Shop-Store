@@ -11,6 +11,7 @@ import Store from './Component/Store';
 import ProductDetails from './Component/ProductDetails';
 import Navbar from './Component/Navbar';
 import ShopCards from './Component/ShopCards';
+// import Card from './share/Card';
 function App() {
   return (
     <ProductContexProvider>
