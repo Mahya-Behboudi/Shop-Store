@@ -17,8 +17,8 @@ const ShopCards = (props) => {
         {
             state.itemCounter > 0 &&
           <div className={style.payments}>
-              <h3><span>Total items</span>{state.itemCounter}</h3>
-            <p><span>Total payments</span>{state.total}</p>
+              <h3><span>Total items  </span>{state.itemCounter}</h3>
+            <p><span>Total payments </span>{state.total} $</p>
             <div className={style.buttonContainer}>
                 <button className={style.clear} onClick={()=>dispatch({type:'CHECKOUT'})}>Chech out </button>
                 <button className={style.checkout} onClick={()=>dispatch({type:'CLEAR'})}>Clear</button>

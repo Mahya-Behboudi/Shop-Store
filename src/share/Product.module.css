@@ -60,7 +60,7 @@ rgba(0,0,0,.09) 0 8px 4px,rgba(0,0,0,.09) 0 16px 8px,rgba(0,0,0,.09) 0 32px 16px
     color: #1a73e8;
     font-size: 0.95rem;
 }
-.buttonContainer {
+.buttonContainer button {
     font-size: .9rem;
     background-color: #1a73e8;
     border: none;
@@ -73,19 +73,22 @@ rgba(0,0,0,.09) 0 8px 4px,rgba(0,0,0,.09) 0 16px 8px,rgba(0,0,0,.09) 0 32px 16px
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     cursor: pointer;
-    transition: all .2s ease;
-    -webkit-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -ms-transition: all .2s ease;
-    -o-transition: all .2s ease;
-    box-shadow: rgba(50,50,93,.25) 0 4px 12px -2px,
-    rgba(0,0,0,.3) 0 3px 7px  -3px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    box-shadow: rgba(50,50,93,.25) 0 4px 12px -2px,    rgba(0,0,0,.3) 0 3px 7px  -3px;
     margin-left: 5px;
 }
 .smallButton {
-    width: 30px;
+    width: 30px !important;
+    /* height: 30px; */
+    background: #1a73e8;
     font-size: 1.6rem;
     font-weight: bold;
+    outline: none; 
+    border: none;
     line-height: 30px;
 
 }

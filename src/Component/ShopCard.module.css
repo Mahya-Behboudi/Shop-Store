@@ -13,6 +13,11 @@
     width: 70%;
 }
 .payments {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
     width: 27%;
     background: #fff;
     border: 1px solid silver;
@@ -25,7 +30,13 @@
 }
 .payments p {
     color: rgb(61,61,61);
-    margin: 20px 20px 10px;
+    /* margin: 20px 20px 10px; */
+}
+.payments h3  span{
+    color: #1a73e8;
+    font-weight: bold;
+    
+
 }
 .payments p span {
     color: #1a73e8;
@@ -34,7 +45,8 @@
 .checkout {
     display: inline-block;
     background: #34a853;
-    padding: 7px 16px;
+    padding: 7px 30px;
+    margin: 7px 30px;
     color: #fff;
     font-weight: bold;
     border: none;
