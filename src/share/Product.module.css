@@ -95,6 +95,16 @@ rgba(0,0,0,.09) 0 8px 4px,rgba(0,0,0,.09) 0 16px 8px,rgba(0,0,0,.09) 0 32px 16px
 .smallButton img {
     width: 20px;
 }
+.counter {
+    padding: 0 4px;
+    margin: 0 2px 0 5px;
+    background-color: orange;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
 .buttonContainer button:hover {
     background-color: #0b499b;
 }

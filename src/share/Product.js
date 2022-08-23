@@ -27,6 +27,7 @@ const Product = ({productData}) => {
                      
                         {quantityCounter(state,productData.id) > 1 && <button className={style.smallButton} onClick={()=>dispatch({type:'DECREASE' ,payload:productData})}>-</button>}
                         {quantityCounter(state,productData.id) === 1 && <button className={style.smallButton} onClick={()=>dispatch({type:'REMOVE_ITEM',payload:productData})}><img src={trash} alt='trash' style={{width:'15px'}}/></button>}
+                        {quantityCounter(state,productData.id) > 0 &&<span className={style.counter}>{quantityCounter(state,productData.id)}</span>}
 
                 </div>
             </div>
