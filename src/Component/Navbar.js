@@ -6,16 +6,18 @@ import { cardContext } from '../Contex/CardContextProvider';
 import { Link } from 'react-router-dom';
 // images
 import shopImage from '../asserts/icons/cart.svg'
+// style module 
+import style from './Navbar.module.css';
 const Navbar = () => {
     const {state} = useContext(cardContext)
     return (
-        <div>
-            <div>
-                <Link to='/products'>Products</Link>
-                <Link to='/cards'>
-                <img src={shopImage} alt="shop basket"/>
-                </Link>
-                <span>{state.itemCounter}</span>
+        <div className={style.mainContainer}>
+            <div className={style.container}>
+                <Link className={style.productLink} to='/products'>Products</Link>
+                <div className={style.iconContainer}>
+                    <Link to='/cards'><img src={shopImage} alt="shop basket"/></Link>
+                    <span>{state.itemCounter}</span>
+                </div>
             </div> 
         </div>
     );
